@@ -18,6 +18,8 @@ public class ShopApp {
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
 
+        Clothing[] items = {item1, item2};
+
 
         item1.description = "Blue Jacket";
         item1.price = 20.9;
@@ -29,7 +31,7 @@ public class ShopApp {
         System.out.println("Item1 " + item1.description + ", " + item1.price + ", " + item1.size);
         System.out.println("Item2" + item2.description + ", " + item2.price + ", " + item2.size);
 
-        total = (item1.price + (item2.price * 2)) * (1 + tax);
+        //total = (item1.price + (item2.price * 2)) * (1 + tax);
         System.out.println("The total is " + total);
 
         int measurement = 3;
@@ -48,5 +50,11 @@ public class ShopApp {
             default:
                 c1.size = "X";
         }
+
+        for (int i = 0; i < items.length ; i++) {
+            System.out.println(items[0]);
+        }
+
+
     }
 }
