@@ -9,9 +9,9 @@ public class ShopApp {
 
         System.out.println("Welcome to the Duke Choice Shop");
 
-        Customer c1 = new Customer();//instance of a class
-        c1.setName("Pinky");
-        c1.setSize("S");
+        Customer c1 = new Customer("Pinky", 3);
+        //c1.setName("Pinky");
+        //c1.setSize("S");
 
 
         Clothing item1 = new Clothing();
@@ -42,22 +42,16 @@ public class ShopApp {
 
 
         int measurement = 8;
-        c1.setSize(measurement);
-        System.out.println("Customer name is " + c1.getName() + "," + c1.getSize());
 
+        c1.addItems(items);
 
-        for (Clothing item : items) {
-            if (c1.getSize().equals(item.getSize())) {
-                total = total + item.getPrice();
-                System.out.println("Item " + item.getDescription() + ", " + item.getPrice() + ", " + item.getSize());
+        //c1.setSize(measurement);
 
-                total = total + total * tax;
-                if (total > 15) {
-                    break;
-                }
-            }
+        System.out.println("Customer is " + c1.getName() + "," + c1.getSize() + "," + c1.getTotalClothingCost());
+
+        for(Clothing item : c1.getItems()) {
+            System.out.println("Items " + item.getDescription());
         }
-        System.out.println("The total is " + total);
 
 
     }
